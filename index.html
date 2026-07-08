@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de senha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="conteudo">
+        <div class="conteudo-titulo">
+            <img src="unlock.svg" alt="cadeado aberto">
+            <h2 class="titulo-principal">Gerador de senhas</h2>
+            <h3 class="titulo-secundario">Gere instantaneamente uma senha aleatória e segura</h3>
+        </div>
+
+        <div class="conteudo-senha">
+            <label for="senha" class="sr-only">Senha</label>
+            <input name="senha" type="text" id="campo-senha" readonly>
+            <button class="botao-copiar" id="botao-copiar" title="Copiar senha" aria-label="Copiar senha">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="9" y="9" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4C2.89543 15 2 14.1046 2 13V4C2 2.89543 2.89543 2 4 2H13C14.1046 2 15 2.89543 15 4V5"
+                          stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <p class="copiado-aviso" id="copiado-aviso" aria-live="polite">Senha copiada!</p>
+        </div>
+
+        <div class="parametro">
+            <h3 class="parametro-titulo">Personalize sua senha</h3>
+            <div class="parametro-coluna__senha">
+
+                <div class="parametro-senha">
+                    <h4 class="parametro-senha__titulo">Número de caracteres</h4>
+                    <div class="parametro-senha-botoes">
+                        <button class="parametro-senha__botao" id="botao-diminuir" aria-label="Diminuir número de caracteres">-</button>
+                        <p class="parametro-senha__texto" id="numero-caracteres">12</p>
+                        <button class="parametro-senha__botao" id="botao-aumentar" aria-label="Aumentar número de caracteres">+</button>
+                    </div>
+                </div>
+
+                <div class="parametro-senha">
+                    <h4 class="parametro-senha__titulo">Características da senha</h4>
+                    <div class="parametro-senha__opcoes">
+                        <label class="parametro-senha__opcao">
+                            <input type="checkbox" id="opcao-maiusculas" checked>
+                            Letras maiúsculas (A-Z)
+                        </label>
+                        <label class="parametro-senha__opcao">
+                            <input type="checkbox" id="opcao-minusculas" checked>
+                            Letras minúsculas (a-z)
+                        </label>
+                        <label class="parametro-senha__opcao">
+                            <input type="checkbox" id="opcao-numeros" checked>
+                            Números (0-9)
+                        </label>
+                        <label class="parametro-senha__opcao">
+                            <input type="checkbox" id="opcao-simbolos">
+                            Símbolos (!@#$%)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="parametro-senha">
+                    <h4 class="parametro-senha__titulo">Força da senha</h4>
+                    <div class="parametro-senha__forca">
+                        <div class="forca-barra">
+                            <div class="forca-barra__preenchido" id="forca-barra-preenchido"></div>
+                        </div>
+                        <p class="forca-texto" id="forca-texto">Média</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="botao-gerar" id="botao-gerar">Gerar nova senha</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
